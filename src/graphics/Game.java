@@ -4,10 +4,22 @@ import controllers.Clock;
 import domain.Manager;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+/*
+import controllers.Keyboard;
+import java.awt.BorderLayout;
+import java.awt.Canvas;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.image.BufferStrategy;
+import java.awt.image.BufferedImage;
+import java.awt.image.DataBufferInt;
+import javax.swing.JFrame;
+//*/
 
 public class Game /*extends Canvas*/ implements Runnable {
+	//*
 	private final Window window;
-	/*
+	/*/
 	private final JFrame window;
 	private final Screen screen;
 	private final BufferedImage image;
@@ -23,7 +35,7 @@ public class Game /*extends Canvas*/ implements Runnable {
 	private final Manager manager;
 
 	public Game(/*final int width, final int height*/) {
-		/* 
+		/*
 		keyboard = new Keyboard();
 		this.addKeyListener(keyboard);
 		window = new JFrame("Conect 4");
@@ -39,10 +51,11 @@ public class Game /*extends Canvas*/ implements Runnable {
 		screen = new Screen(width, height);
 		image = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
 		toDisplay = ((DataBufferInt) image.getRaster().getDataBuffer()).getData();
-		//*/
+		/*/
 		window = new Window(448,470);
 		manager = new Manager();
 		gameBoard = new GameBoard();
+		//*/
 	}
 
 	public synchronized void start() {
@@ -91,11 +104,11 @@ public class Game /*extends Canvas*/ implements Runnable {
 		g.dispose();
 
 		strategy.show();
-		//*/
-		
+		/*/
 		window.clear();
 		gameBoard.render(window, manager.getBoard());
 		window.display();
+		//*/
 	}
 
 	@Override
