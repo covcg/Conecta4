@@ -53,9 +53,9 @@ public class Game /*extends Canvas*/ implements Runnable {
 		toDisplay = ((DataBufferInt) image.getRaster().getDataBuffer()).getData();
 		/*/
 		window = new Window(448,470);
+		//*/
 		manager = new Manager();
 		gameBoard = new GameBoard();
-		//*/
 	}
 
 	public synchronized void start() {
@@ -69,8 +69,7 @@ public class Game /*extends Canvas*/ implements Runnable {
 		try {
 			thread.join();
 		} catch (InterruptedException ex) {
-			Logger.getLogger(Manager.class.getName()).log(Level.SEVERE,
-			null, ex);
+			Logger.getLogger(Manager.class.getName()).log(Level.SEVERE, null, ex);
 		}
 	}
 
