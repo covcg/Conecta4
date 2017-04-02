@@ -45,7 +45,7 @@ public class GameBoard {
 		sprite5.move(272, 16);
 		sprite6.move(334, 16);
 		sprite7.move(398, 16);
-		wonSprite.move(162, 250);
+		wonSprite.move(162, 220);
 	}
 
 	public void render(Window window, final Board board) {
@@ -75,10 +75,10 @@ public class GameBoard {
 		}
 		if (win) {
 			if (board.getWinner()[1]) {
-				blueToken.setPosition(194, 180);
+				blueToken.setPosition(194, 217);
 				window.draw(blueToken);
 			} else {
-				redToken.setPosition(194, 180);
+				redToken.setPosition(194, 217);
 				window.draw(redToken);
 			}
 			window.draw(wonSprite);
