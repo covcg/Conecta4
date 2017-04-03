@@ -6,6 +6,8 @@
 package graphics;
 
 import domain.Board;
+import domain.Token;
+import java.util.TreeMap;
 
 /**
  *
@@ -52,6 +54,7 @@ public class GameBoard {
 		final int fils = board.getFils();
 		final int cols = board.getCols();
 		final int[] cells = board.getCells();
+		final TreeMap<Integer, Token> shots = board.getShots();
 		final boolean win = board.getWinner()[0];
 		window.draw(sprite1);
 		window.draw(sprite2);
@@ -63,6 +66,15 @@ public class GameBoard {
 		for (int i = 0; i < fils * cols; i++) {
 			int fil = i % fils;
 			int col = i / fils;
+			/*
+			if (shots.containsKey(i) && shots.get(i).getType()) {
+				redToken.setPosition(col * 64, (fils - fil - 1) * 64 + 64);
+				window.draw(redToken);
+			} else if (shots.containsKey(i)) {
+				blueToken.setPosition(col * 64, (fils - fil - 1) * 64 + 64);
+				window.draw(blueToken);
+			}
+			/*/
 			if (cells[i] == 1) {
 				redToken.setPosition(col * 64, (fils - fil - 1) * 64 + 64);
 				window.draw(redToken);
@@ -70,6 +82,7 @@ public class GameBoard {
 				blueToken.setPosition(col * 64, (fils - fil - 1) * 64 + 64);
 				window.draw(blueToken);
 			}
+			//*/
 			cellSprite.setPosition(col * 64, (fils - fil - 1) * 64 + 64);
 			window.draw(cellSprite);
 		}
